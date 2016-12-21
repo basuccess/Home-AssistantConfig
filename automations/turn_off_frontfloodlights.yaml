@@ -1,0 +1,7 @@
+alias: 'Turn off front flood lights at time'
+trigger:
+  - platform: time
+    after: "00:30:00"
+action:
+  service: switch.turn_off
+  entity_id: switch.front_flood_lights

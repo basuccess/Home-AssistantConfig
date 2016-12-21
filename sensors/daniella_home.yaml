@@ -1,0 +1,10 @@
+platform: template
+sensors:
+  daniella_home:
+    value_template: >-
+      {%if is_state('device_tracker.daniellas_ipadhome', 'home') or is_state('device_tracker.192168172', 'home') %}
+        'home'
+      {% else %}
+        'not home'
+      {% endif %}
+    friendly_name: 'Daniella'

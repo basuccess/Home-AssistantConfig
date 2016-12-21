@@ -1,0 +1,7 @@
+alias: 'Turn off front door lights at time'
+trigger:
+  - platform: time
+    after: "22:00:00"
+action:
+  service: switch.turn_off
+  entity_id: switch.front_door_light

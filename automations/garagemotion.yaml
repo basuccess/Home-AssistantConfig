@@ -1,0 +1,8 @@
+alias: 'Garage lights on when movement detected'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
+    to: 'on'
+action:
+  service: homeassistant.turn_on
+  entity_id: script.timed_light

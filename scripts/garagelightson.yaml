@@ -1,0 +1,13 @@
+timed_light:
+  alias: "Turn on garage lights and reset delay timer"
+  sequence:
+    # Cancel ev. old timers
+    - service: script.turn_off
+      data:
+         entity_id: script.timer_off
+    - service: switch.turn_on
+      entity_id: switch.ge_12722_onoff_relay_switch_switch_3_0
+    # Set new timer
+#   - service: script.turn_on
+#     data:
+#       entity_id: script.timer_off

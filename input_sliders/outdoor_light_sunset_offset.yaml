@@ -1,0 +1,6 @@
+outdoor_light_sunset_offset:
+  name: Sunset offset in (minutes)
+  initial: 30
+  min: -60
+  max: 60
+  step: 15

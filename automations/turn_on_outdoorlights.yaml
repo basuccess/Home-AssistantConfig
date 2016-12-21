@@ -1,0 +1,12 @@
+alias: 'Turn outdoor lights on after sunset'
+trigger:
+  platform: sun
+  event: sunset
+  offset: "+00:30:00"
+#  offset: '00:{{ states.input_slider.input_slider.outdoor_light_sunset_offset.state | int }}:00'
+action:
+  service: switch.turn_on
+  entity_id:
+    - switch.front_flood_lights
+    - switch.front_door_lights
+    - switch.driveway_flood_lights

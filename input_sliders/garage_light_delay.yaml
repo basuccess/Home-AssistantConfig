@@ -1,0 +1,6 @@
+garage_light_delay:
+  name: Garage Light Off Delay (seconds)
+  initial: 60
+  min: 0
+  max: 300
+  step: 10

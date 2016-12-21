@@ -1,0 +1,12 @@
+platform: template
+sensors:
+  garage_door_state:
+    value_template: >-
+      {%if states.switch.garage_door.attributes.sensor_state == 'on' %}
+        closed
+      {%elif states.switch.garage_door.attributes.sensor_state == 'off' %}
+        open
+      {% else %}
+        unknown
+      {% endif %}
+    friendly_name: 'Garage Door State'
