@@ -1,0 +1,64 @@
+
+alexandrosipad:
+  hide_if_away: false
+  mac:
+  name: "Alexandro\u2019s iPad"
+  picture:
+  track: true
+  vendor:
+
+resolve_iphone:
+  hide_if_away: false
+  mac:
+  name: Tony's iPhone 6
+  picture: 
+  track: true
+  vendor:
+
+tonyhouwelingsiphone:
+  hide_if_away: false
+  mac:
+  name: Tony's iPhone 5
+  picture:
+  track: true
+  vendor:
+
+ipad:
+  hide_if_away: false
+  mac:
+  name: Danniella's iPad
+  picture:
+  track: true
+  vendor:
+
+daniellasmbp:
+  hide_if_away: false
+  mac:
+  name: Daniella's MBP
+  picture:
+  track: true
+  vendor:
+
+tizianasnewiphone:
+  hide_if_away: false
+  mac:
+  name: Tiziana's iPhone
+  picture:
+  track: true
+  vendor:
+
+tonysmbp:
+  hide_if_away: false
+  mac:
+  name: Tonys-MBP
+  picture:
+  track: true
+  vendor:
+
+macbookpro:
+  hide_if_away: false
+  mac:
+  name: MacBook Pro
+  picture:
+  track: true
+  vendor:

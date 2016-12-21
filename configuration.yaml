@@ -1,0 +1,85 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 33.087070
+  longitude: -96.722484
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 675
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  temperature_unit: F
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+  customize: !include customize.yaml
+
+http:
+  api_password: !secret http_password
+#  ssl_certificate: '/etc/letsencrypt/live/yourdomain.duckdns.org/fullchain.pem'
+#  ssl_key: '/etc/letsencrypt/live/yourdomain.duckdns.org/privkey.pem'
+  ssl_certificate: '/etc/letsencrypt/live/basuccesshass.duckdns.org/fullchain.pem'
+  ssl_key: '/etc/letsencrypt/live/basuccesshass.duckdns.org/privkey.pem'
+  trusted_networks:
+     - 127.0.0.1
+     - 192.168.1.0/24
+
+group: !include groups.yaml
+
+# Show links to resources in log and frontend
+# introduction:
+
+# Enables the frontend
+frontend:
+
+# Amazon Echo example configuration.yaml entry
+# emulated_hue:
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+wemo:
+
+zwave:
+  usb_path: /dev/ttyACM0
+  config_path: /srv/hass/src/python-openzwave/openzwave/config
+
+ifttt:
+  key: !secret ifttt_key
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Sensor configuration file
+sensor: !include_dir_list sensors
+          
+recorder:
+  purge_days: 7
+
+device_tracker: !include device_tracker.yaml
+
+envisalink: !include alarm-control-panel.yaml
+
+input_slider: !include_dir_merge_named input_sliders 
+
+automation: !include_dir_list automations
+
+script: !include_dir_merge_named scripts 
+
+logger:
+  default: debug # info # default logging level 
+  logs:
+    homeassistant.components.device_tracker: error
+    homeassistant.components.http: error
+    homeassistant.components.automation: debug
+

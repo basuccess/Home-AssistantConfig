@@ -1,0 +1,148 @@
+###### Groups ######
+
+#default_view:
+test_view:
+  name: Test
+  view: yes
+  icon: mdi:home
+  entities:
+  - group.home_alarm
+  - group.garage
+  - group.outdoorlights
+  - group.devices
+  - sun.sun
+  - sensor.pws_weather
+  - sensor.pws_temp_f
+  - sensor.pws_feelslike_string
+  - sensor.pws_alerts
+  - sensor.pws_wind_dir
+  - sensor.pws_wind_mph
+  - weblink.forecast
+  - device_tracker.resolve_iphone
+  - device_tracker.tizianasnewiphone
+  
+
+automation:
+  name: Automations
+  view: yes
+  icon: mdi:robot
+  entities:
+  - group.automations
+  - group.scripts
+
+status_view:
+  name: Status
+  view: yes
+  icon: mdi:chip
+  entities:
+    - group.time_date
+    - group.sensor_pi
+
+home_alarm:
+  name: Home Alarm Panel
+  entities:
+    - alarm_control_panel.home_alarm
+    - sensor.home_alarm_keypad
+    - binary_sensor.door_frontgarage
+    - binary_sensor.door_patio
+    - binary_sensor.window_denguestlivingdining
+    - binary_sensor.window_family_room
+    - binary_sensor.window_kitchen
+    - binary_sensor.window_master_bedroom
+    - binary_sensor.window_up_stairs
+    - binary_sensor.heat_attic
+
+garage:
+  name: Garage
+  entities:
+    - switch.garage_door
+    - sensor.garage_door_state
+    - switch.ge_12722_onoff_relay_switch_switch_3_0
+    - binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
+    - sensor.aeotec_zw074_multisensor_gen5_temperature_2_1
+    - sensor.aeotec_zw074_multisensor_gen5_relative_humidity_2_5
+    - sensor.aeotec_zw074_multisensor_gen5_luminance_2_3
+    - sensor.aeotec_zw074_multisensor_gen5_alarm_type_2_0
+    - sensor.aeotec_zw074_multisensor_gen5_alarm_level_2_1
+    - sensor.aeotec_zw074_multisensor_gen5_sourcenodeid_2_2
+    - sensor.aeotec_zw074_multisensor_gen5_burglar_2_10
+
+time_date:
+  name: Time & Date
+  entities:
+    - sensor.date
+    - sensor.time
+    - sensor.time_utc
+
+outdoorlights:
+  name: Outdoor Lights
+  entities:
+    - switch.front_door_lights
+    - switch.front_flood_lights
+    - switch.driveway_flood_lights
+
+devices:
+  name: Devices
+  entities:
+    - device_tracker.resolve_iphone
+    - device_tracker.tizianasnewiphone
+
+automations:
+  name: Automations
+  entities:
+    - automation.garage_delay_lights_off_after_no_movement_and_overhead_door_is_closed
+    - automation.garage_lights_on_when_movement_detected
+    - automation.garage_lights_on_when_overhead_door_is_open
+    - automation.turn_outdoor_lights_on_after_sunset
+    - automation.turn_off_driveway_flood_lights_at_time
+    - automation.turn_off_front_door_lights_at_time
+    - automation.turn_off_front_flood_lights_at_time
+
+scripts:
+  name: Scripts
+  entities:
+    - script.timed_light
+    - script.timer_off
+    - input_slider.garage_light_delay
+
+sensor_pi:
+  name: Raspberry Pi
+  entities:
+    - sensor.cpu_use
+    - sensor.cpu_temperature
+    - sensor.gpu_temperature
+    - sensor.disk_use_
+    - sensor.disk_use_varlog
+    - sensor.ram_use
+    - sensor.ram_free
+    - sensor.swap_use
+    - sensor.swap_free
+    - sensor.last_boot
+    - sensor.since_last_boot
+    - sensor.received_wlan0
+    - sensor.sent_wlan0
+
+weather_view:
+  name: Weather
+  view: yes
+  icon: mdi:white-balance-sunny
+  entities:
+    - group.wunderground
+
+wunderground:
+  name: Wunderground
+  entities:
+    - sensor.pws_weather
+    - sensor.pws_temp_f
+    - sensor.pws_feelslike_string
+    - sensor.pws_heat_index_string
+    - sensor.pws_relative_humidity
+    - sensor.pws_dewpoint_string
+    - sensor.pws_wind_string
+    - sensor.pws_precip_today_string
+    - sensor.pws_pressure_in
+    - sensor.pws_visibility_mi
+    - sensor.pws_uv
+    - sensor.pws_solarradiation
+    - sensor.pws_alerts
+    - weblink.forecast

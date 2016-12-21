@@ -1,0 +1,38 @@
+host: EnvisaLink.home
+panel_type: DSC
+user_name: !secret evl3_name
+password: !secret evl3_passwd
+code: !secret evl3_code
+port: !secret evl3_port
+evl_version: 3
+keepalive_interval: 60
+zonedump_interval: 30
+panic_type: Police
+zones:
+  01:
+    name: 'Door: Front/Garage'
+    type: 'opening'
+  02:
+    name: 'Window: Den/Guest/Living/Dining'
+    type: 'opening'
+  03:
+    name: 'Window: Master Bedroom'
+    type: 'opening'
+  04:
+    name: 'Window: Family Room'
+    type: 'opening'
+  05:
+    name: 'Door: Patio'
+    type: 'opening'
+  06:
+    name: 'Window: Kitchen'
+    type: 'opening'
+  07:
+    name: 'Window: Up Stairs'
+    type: 'opening'
+  08:
+    name: 'Heat: Attic'
+    type: 'heat'
+partitions:
+  1:
+    name: 'Home Alarm'
