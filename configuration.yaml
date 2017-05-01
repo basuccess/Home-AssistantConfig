@@ -77,9 +77,4 @@ automation: !include_dir_list automations
 script: !include_dir_merge_named scripts 
 
 logger:
-  default: debug # info # default logging level 
-  logs:
-    homeassistant.components.device_tracker: error
-    homeassistant.components.http: error
-    homeassistant.components.automation: debug
-
+  default: critical #debug # info # default logging level 

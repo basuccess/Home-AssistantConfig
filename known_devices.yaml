@@ -62,3 +62,19 @@ macbookpro:
   picture:
   track: true
   vendor:
+
+tzmacpro:
+  hide_if_away: false
+  mac:
+  name: TZMacPro
+  picture:
+  track: true
+  vendor:
+
+tizianasiphone7:
+  hide_if_away: false
+  mac:
+  name: Tiziana's iPhone 7
+  picture:
+  track: true
+  vendor:
